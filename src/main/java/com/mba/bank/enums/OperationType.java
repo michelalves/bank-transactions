@@ -6,6 +6,8 @@ import static com.mba.bank.enums.TransactionType.INCOME;
 import java.math.BigDecimal;
 import java.util.Arrays;
 
+import lombok.Getter;
+
 import com.mba.bank.exceptions.OperationTypeNotFound;
 
 public enum OperationType {
@@ -14,7 +16,7 @@ public enum OperationType {
   WITHDRAWAL(EXPENSE),
   PAYMENT(INCOME);
 
-  private final TransactionType transactionType;
+  @Getter private final TransactionType transactionType;
 
   OperationType(TransactionType type) {
     transactionType = type;

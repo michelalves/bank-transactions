@@ -27,6 +27,7 @@ class TransactionsServiceTest {
   private static final BigDecimal AMOUNT = BigDecimal.TEN;
   @Mock private TransactionsRepository repository;
   @Mock private TransactionMapper mapper;
+  @Mock private AccountService accountService;
   @InjectMocks private TransactionsService service;
 
   @Test

@@ -9,10 +9,17 @@ import com.mba.bank.entities.Account;
 public class AccountMapper {
 
   public Account toEntity(AccountDTO accountDTO) {
-    return Account.builder().document(accountDTO.getDocument()).build();
+    return Account.builder()
+        .document(accountDTO.getDocument())
+        .creditLimit(accountDTO.getCreditLimit())
+        .build();
   }
 
   public AccountDTO toDto(Account account) {
-    return AccountDTO.builder().id(account.getId()).document(account.getDocument()).build();
+    return AccountDTO.builder()
+        .id(account.getId())
+        .document(account.getDocument())
+        .creditLimit(account.getCreditLimit())
+        .build();
   }
 }

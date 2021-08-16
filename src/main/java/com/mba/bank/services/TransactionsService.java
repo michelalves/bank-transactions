@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import com.mba.bank.dtos.TransactionDTO;
+import com.mba.bank.entities.Transaction;
 import com.mba.bank.mappers.TransactionMapper;
 import com.mba.bank.repositories.TransactionsRepository;
 
@@ -14,8 +15,13 @@ public class TransactionsService {
 
   private TransactionsRepository repository;
   private TransactionMapper mapper;
+  private AccountService accountService;
 
   public Long registerTransaction(TransactionDTO transactionDTO) {
-    return repository.save(mapper.toEntity(transactionDTO)).getId();
+    Transaction transaction = mapper.toEntity( transactionDTO );
+
+    accountService.updateCreditLimit(transaction);
+
+    return repository.save( transaction ).getId();
   }
 }

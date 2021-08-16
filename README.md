@@ -20,35 +20,36 @@ TBD
 - `docker`
 - `docker-compose` *version above 1.22.0*
 
-#### Como rodar localmente
+#### How to run local
 
-- Utilizando linha de comando
+- Using command line
 
 ```sh
 git clone git@github.com:michelalves/bank-transactions.git
 make  bank-transactions/development-environment/Makefile.mk start
 ```
 
-- Utilizando IDE
-    1. Devemos inicializar as dependências do serviço pela IDE usando o Makefile.mk do projeto ou por shell na **raiz**
-       do projeto com o comando: `make development-environment/Makefile.mk start-environment`
-    3. Inicializar o serviço pela classe `Application.java`.
+- Using IDE
+    1. Should initialize the service's dependency by the IDE using project's makefile or by shell with in the
+       project's **root** with them command
+       `make development-environment/Makefile.mk start-environment`
+    2. Inicializar o serviço pela classe `BankTransactionApplication.java`
 
 
-- Utilizando Docker
+- Using Docker
 
 ```sh
 `docker build -t`
 `docker run -d -p 8080:8080 transactions`
 ```
 
-- Para conectar no banco de dados do container:
+- DB Connection (**Postgres**)
 
-- user: `bank-transactions`
-- password: `bank-transactions`
-- db: `bank-transactions`
-- host: `localhost:5432`
-- url: `jdbc:postgresql://localhost:5432/banktransactions`
+    * user: `bank-transactions`
+    * password: `bank-transactions`
+    * db: `bank-transactions`
+    * host: `localhost:5432`
+    * url: `jdbc:postgresql://localhost:5432/banktransactions`
 
 #### Api Documentation
 
