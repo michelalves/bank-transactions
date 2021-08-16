@@ -1,0 +1,9 @@
+version: '3.7'
+services:
+  database:
+    container_name: postgres-bank-transactions
+    image: postgres:11.5
+    environment:
+      POSTGRES_USER: banktransactions
+    ports:
+      - "5432:5432"

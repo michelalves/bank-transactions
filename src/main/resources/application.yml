@@ -1,0 +1,23 @@
+logging:
+  level:
+    io.micrometer: TRACE
+management.metrics.export.newrelic:
+  account-id: 3256585
+  apiKey: NRII-zVzQvmdOpvXsEDlPggA-QLZF6AkBvz23
+  serviceName: bank-transactions
+spring:
+  datasource:
+    username: banktransactions
+    password: banktransactions
+    url: jdbc:postgresql://localhost:5432/banktransactions
+  jpa:
+    hibernate:
+      show_sql: true
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+          time_zone: GMT-3
+  jackson:
+    property-naming-strategy: SNAKE_CASE
