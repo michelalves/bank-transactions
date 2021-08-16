@@ -1,6 +1,3 @@
-logging:
-  level:
-    io.micrometer: TRACE
 management.metrics.export.newrelic:
   account-id: 3256585
   apiKey: NRII-zVzQvmdOpvXsEDlPggA-QLZF6AkBvz23
