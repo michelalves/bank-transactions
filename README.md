@@ -53,3 +53,31 @@ make  bank-transactions/development-environment/Makefile.mk start
 #### Api Documentation
 
 http://localhost:8080/swagger-ui.html
+
+#### Examples
+
+- Create account
+
+```
+curl --location --request POST 'http://localhost:8080/accounts' \
+--header 'Content-Type: application/json' \
+--data-raw '{ "document": "04725128970" }'
+```
+
+- Get account by ID
+
+```
+curl 'http://localhost:8080/accounts/1'
+```
+
+- Register transaction
+
+```
+curl POST 'http://localhost:8080/transactions' \
+   --header 'Content-Type: application/json' \
+   --data-raw '{
+       "account_id": 1,
+       "operation_type_id": 1,
+       "amount": 123.32
+   }'
+```
